@@ -7,8 +7,8 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "MCP Chat Interface",
-  description: "Interface for Anthropic Model Context Protocol",
+  title: "MCP Dashboard",
+  description: "Dashboard for Anthropic Model Context Protocol",
 }
 
 export default function RootLayout({
