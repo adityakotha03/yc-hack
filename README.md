@@ -38,7 +38,7 @@ pnpm dev
 
 The application will be available at http://localhost:3000
 
-2. Make sure the MCP client backend is running at http://localhost:8000 before using the frontend application.
+2. Make sure the [MCP client](https://github.com/adityakotha03/mcp-client) backend is running at http://localhost:8000 before using the frontend application.
 
 ## Building for Production
 
