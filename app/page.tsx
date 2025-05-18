@@ -196,11 +196,11 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="min-h-screen overflow-auto">
-      <div className="flex">
+    <div className="min-h-screen overflow-auto flex flex-col">
+      <div className="flex flex-1">
         {/* Left Sidebar with radial gradient */}
         <div
-          className="w-[380px] p-4 relative"
+          className="w-[380px] p-4 relative overflow-y-auto max-h-screen"
           style={{
             background: "radial-gradient(circle, #FFFFFF 0%, #B1E6F8 100%)",
           }}
@@ -387,7 +387,7 @@ export default function Dashboard() {
 
         {/* Main Content with background image */}
         <div
-          className="flex-1 p-6 flex flex-col relative"
+          className="flex-1 p-6 flex flex-col relative overflow-y-auto max-h-screen"
           style={{
             backgroundImage: `url('/soft-blue-gradient.png')`,
             backgroundSize: "cover",
@@ -401,7 +401,7 @@ export default function Dashboard() {
           {/* Content container */}
           <div className="relative z-10 flex flex-col h-full">
             {/* Header with Logo */}
-            <div className="flex justify-center mb-6">
+            <div className="flex justify-center mb-4">
               <div className="bg-[#161616] text-white px-6 py-3 rounded-lg">
                 <div className="flex items-center space-x-2">
                   <span className="text-[#00a0ff] text-2xl font-bold">√</span>
@@ -414,11 +414,11 @@ export default function Dashboard() {
             </div>
 
             {/* Chat Interface */}
-            <div className="flex-1 flex flex-col">
-              <h1 className="text-[#463724] text-2xl font-medium mb-6">Hey Sam, ask me anything.</h1>
+            <div className="flex-1 flex flex-col min-h-0">
+              <h1 className="text-[#463724] text-2xl font-medium mb-4">Hey Sam, ask me anything.</h1>
 
               {/* Chat Messages */}
-              <div className="flex-1 overflow-y-auto mb-4 px-4">
+              <div className="flex-1 overflow-y-auto mb-4 px-4 max-h-[40vh]">
                 {messages.length > 0 && (
                   <div className="space-y-4">
                     {messages.map((msg) => (
@@ -491,7 +491,7 @@ export default function Dashboard() {
               </div>
 
               {/* Input Area */}
-              <div className="sticky bottom-0 w-full max-w-3xl mx-auto">
+              <div className="w-full max-w-3xl mx-auto mt-auto">
                 <div className={`bg-white rounded-lg shadow-sm ${messages.length === 0 ? "mx-auto" : ""}`}>
                   <div className="flex items-end">
                     <div className="flex-grow relative">
@@ -537,7 +537,7 @@ export default function Dashboard() {
 
               {/* Quick Actions - only show when there are no messages */}
               {messages.length === 0 && (
-                <div className="flex gap-4 mt-6">
+                <div className="flex gap-4 mt-4">
                   <Button
                     variant="outline"
                     className="flex-1 bg-white bg-opacity-95 border-gray-200 text-[#463724] hover:bg-gray-50"
@@ -570,7 +570,7 @@ export default function Dashboard() {
               )}
 
               {/* Footer */}
-              <div className="mt-auto pt-4 text-right text-sm text-[#463724]">
+              <div className="mt-4 pt-2 text-right text-sm text-[#463724]">
                 Connected through
                 <span className="inline-flex ml-2 space-x-2">
                   <img src="/notion-logo.png" alt="Notion" className="h-5 w-5" />
